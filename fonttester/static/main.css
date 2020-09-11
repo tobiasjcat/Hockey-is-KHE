@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'rot14';
+    src: url('/static/rot14.ttf');
+}
+body {
+  font-size: 100%;
+  font:inherit;
+  font-family: 'rot14';
+  vertical-align: baseline;
+  background-color: #1b262c;
+  color: #bbe1fa;
+}
