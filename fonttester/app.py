@@ -7,6 +7,8 @@ from bottle import get, response, run, static_file, template
 
 import string
 
+doublelower = string.ascii_lowercase * 2
+doubleupper = string.ascii_uppercase * 2
 
 @get("/static/<sfile>")
 def staticassets(sfile):
@@ -25,7 +27,12 @@ def rotfonts_file():
 @get("/")
 @get("/index")
 def indexpage():
-    return template("templates/index.html")
+    rotdict = {i:{} for i in range(26)}
+    for i in range(26):
+        for l,u in zip(string.ascii_lowercase, string.ascii_uppercase):
+            rotdict[i][l] = doublelower[doublelower.find(l) + i]
+            rotdict[i][u] = doublelower[doublelower.find(u) + i]
+    return template("templates/index.html", rotdict=rotdict)
 
 def main():
     run(host="0.0.0.0", port=13244, server="eventlet")
