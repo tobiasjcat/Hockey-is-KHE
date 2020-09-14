@@ -1,0 +1,14 @@
+% for i in range(26):
+@font-face {
+    font-family: 'rot{{ i }}';
+    src: url('/ttfs/rot{{ i }}.ttf');
+}
+body {
+  font-size: 100%;
+  font:inherit;
+  font-family: 'rot{{ i }}';
+  vertical-align: baseline;
+  background-color: #1b262c;
+  color: #bbe1fa;
+}
+% end

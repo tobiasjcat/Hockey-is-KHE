@@ -3,10 +3,30 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/static/main.css" type="text/css">
+    <link rel="stylesheet" href="/rotfonts.css" type="text/css">
     <title>FONTTEST</title>
   </head>
   <body>
     <h1>FONTTEST</h1>
     <p>content goes here</p>
+    <table>
+      <tr>
+        % for i in range(26):
+        <th>{{ i }}</th>
+        % end
+      </tr>
+
+      <tr>
+        % for i in range(26):
+        <td style="font-family:rot{{ i }};">  a </td>
+        % end
+      </tr>
+      <tr>
+        % for i in range(26):
+        <td style="font-family:rot{{ i }};">  b </td>
+        % end
+      </tr>
+
+    </table>
   </body>
 </html>
